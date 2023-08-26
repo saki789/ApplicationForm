@@ -1,15 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
     const fieldsets = document.querySelectorAll('.fieldset-container');
-    let currentFieldset = 0;
+    const progressBar = document.getElementById('progress-bar');
+    const previousButton = document.getElementById('previous-button');
+    const nextButton = document.getElementById('next-button');
 
-    function showFieldset(fieldsetIndex) {
-        fieldsets.forEach((fieldset, index) => {
-            if (index === fieldsetIndex) {
-                fieldset.style.display = 'block';
-            } else {
-                fieldset.style.display = 'none';
-            }
+    let currentFieldset = 0;
+    updateProgressBar();
+
+    function updateProgressBar() {
+        const progress = (currentFieldset / (fieldsets.length - 1)) * 100;
+        progressBar.style.width = `${progress}%`;
+    }
+
+    function showFieldset(index) {
+        fieldsets.forEach((fieldset, i) => {
+            fieldset.style.display = i === index ? 'block' : 'none';
         });
+        updateProgressBar();
     }
 
     function showNextFieldset() {
@@ -26,9 +33,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Initialize the form behavior
     showFieldset(currentFieldset);
 
-    document.getElementById('next-button').addEventListener('click', showNextFieldset);
-    document.getElementById('previous-button').addEventListener('click', showPreviousFieldset);
+    nextButton.addEventListener('click', function () {
+        showNextFieldset();
+    });
+
+    previousButton.addEventListener('click', function () {
+        showPreviousFieldset();
+    });
 });
