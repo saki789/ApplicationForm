@@ -54,11 +54,11 @@ legend {
 }
 
 label {
-    display: block;
     margin-bottom: 5px;
     color: #333;
     font-weight: bold;
     animation: fadeIn 0.5s ease-in-out;
+    display: block;
 }
 
 input, textarea {
@@ -149,4 +149,4 @@ button:hover {
     .container {
         width: 90%;
     }
-    }
+}
