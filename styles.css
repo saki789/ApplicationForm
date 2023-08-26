@@ -45,6 +45,7 @@ fieldset {
     animation: fadeIn 0.5s ease-in-out;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 legend {
@@ -77,31 +78,15 @@ input:focus, textarea:focus {
     box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
 }
 
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    width: 100%;
-    margin-top: 10px;
-    font-size: 16px;
-    animation: fadeIn 0.5s ease-in-out, moveUp 0.5s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
 .navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
     animation: fadeInUp 0.5s ease-in-out;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
 }
 
 .progress-container {
