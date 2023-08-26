@@ -22,6 +22,7 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 400px;
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 fieldset {
@@ -30,6 +31,7 @@ fieldset {
     border-radius: 10px;
     margin-bottom: 20px;
     background-color: #f9f9f9;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 legend {
@@ -43,6 +45,7 @@ label {
     margin-bottom: 5px;
     color: #333;
     font-weight: bold;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 input, textarea {
@@ -51,6 +54,7 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
 button {
@@ -60,17 +64,19 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation: fadeInUp 0.5s ease-in-out;
 }
 
 @keyframes fadeInUp {
@@ -81,6 +87,15 @@ button:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 
