@@ -39,12 +39,15 @@ body {
     width: 0;
     background-color: #3498db;
     border-radius: 4px;
+    transition: width 0.3s ease;
 }
 
 /* Button container */
 .btn-container {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
     margin-top: 20px;
+    align-items: center;
 }
 
 /* Submit button */
@@ -61,3 +64,25 @@ body {
 .submit-btn:hover {
     background-color: #2980b9;
 }
+
+/* Next and Previous buttons */
+.next-btn,
+.prev-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover,
+.prev-btn:hover {
+    background-color: #ddd;
+}
+
+/* Hide other fieldsets initially */
+fieldset:not(:first-of-type) {
+    display: none;
+    }
