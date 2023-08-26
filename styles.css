@@ -29,7 +29,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Added space-between */
     animation: fadeInUp 0.5s ease-in-out, moveUp 0.5s ease-in-out;
     padding: 20px;
     width: 100%;
@@ -89,6 +89,42 @@ input:focus, textarea:focus {
     width: 100%;
 }
 
+.prev-btn,
+.next-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.next-btn:hover, .prev-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    width: 100%;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
 .progress-container {
     width: 100%;
     height: 10px;
@@ -143,4 +179,4 @@ input:focus, textarea:focus {
     .container {
         width: 90%;
     }
-}
+        }
