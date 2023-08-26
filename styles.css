@@ -15,14 +15,14 @@ body {
     margin: 0;
 }
 
-form {
+.container {
     background-color: #fff;
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 400px;
     animation: fadeInUp 0.5s ease-in-out;
+    padding: 20px;
 }
 
 fieldset {
@@ -65,8 +65,8 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    display: block;
-    margin: 10px auto;
+    width: 100%;
+    margin-top: 10px;
     font-size: 16px;
 }
 
@@ -120,7 +120,7 @@ button:hover {
 
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
-    form {
+    .container {
         width: 90%;
     }
-        }
+}
