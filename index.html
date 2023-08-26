@@ -2,38 +2,9 @@
 <html>
 <head>
     <title>Application Form</title>
-    <style>
-        .navigation {
-            position: fixed;
-            bottom: 0;
-            background-color: #f0f0f0;
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-        }
-    </style>
-    <script>
-        var currentFieldset = 0;
-
-        function showFieldset(fieldsetIndex) {
-            var fieldsets = document.querySelectorAll('.fieldset-container');
-            fieldsets[currentFieldset].style.display = 'none';
-            fieldsets[fieldsetIndex].style.display = 'block';
-            currentFieldset = fieldsetIndex;
-        }
-
-        function showNextFieldset() {
-            if (currentFieldset < 3) {
-                showFieldset(currentFieldset + 1);
-            }
-        }
-
-        function showPreviousFieldset() {
-            if (currentFieldset > 0) {
-                showFieldset(currentFieldset - 1);
-            }
-        }
-    </script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <form>
@@ -45,7 +16,10 @@
             <input type="text" id="second-name" name="second-name"><br>
             <label for="last-name">Last Name:</label>
             <input type="text" id="last-name" name="last-name"><br>
-            <button onclick="showNextFieldset()">Next</button>
+            <label for="phone-contact">Phone Contact:</label>
+            <input type="tel" id="phone-contact" name="phone-contact"><br>
+            <label for="physical-address">Physical Address:</label>
+            <textarea id="physical-address" name="physical-address"></textarea><br>
         </fieldset>
         
         <fieldset class="fieldset-container" id="next-of-kin">
@@ -56,8 +30,10 @@
             <input type="text" id="next-of-kin-second-name" name="next-of-kin-second-name"><br>
             <label for="next-of-kin-last-name">Last Name:</label>
             <input type="text" id="next-of-kin-last-name" name="next-of-kin-last-name"><br>
-            <button onclick="showPreviousFieldset()">Previous</button>
-            <button onclick="showNextFieldset()">Next</button>
+            <label for="relationship">Relationship:</label>
+            <input type="text" id="relationship" name="relationship"><br>
+            <label for="next-of-kin-contact">Contact:</label>
+            <input type="tel" id="next-of-kin-contact" name="next-of-kin-contact"><br>
         </fieldset>
         
         <fieldset class="fieldset-container" id="employment-history">
@@ -66,8 +42,10 @@
             <input type="text" id="employee-name" name="employee-name"><br>
             <label for="job-title">Job Title:</label>
             <input type="text" id="job-title" name="job-title"><br>
-            <button onclick="showPreviousFieldset()">Previous</button>
-            <button onclick="showNextFieldset()">Next</button>
+            <label for="employment-physical-address">Physical Address:</label>
+            <textarea id="employment-physical-address" name="employment-physical-address"></textarea><br>
+            <label for="employment-contact">Contact:</label>
+            <input type="tel" id="employment-contact" name="employment-contact"><br>
         </fieldset>
         
         <fieldset class="fieldset-container" id="education-background">
@@ -76,8 +54,10 @@
             <input type="text" id="institution-name" name="institution-name"><br>
             <label for="year-started">Year Started:</label>
             <input type="number" id="year-started" name="year-started"><br>
-            <button onclick="showPreviousFieldset()">Previous</button>
-            <input type="submit" value="Submit">
+            <label for="year-end">Year End:</label>
+            <input type="number" id="year-end" name="year-end"><br>
+            <label for="qualification">Qualification:</label>
+            <input type="text" id="qualification" name="qualification"><br>
         </fieldset>
         
         <div class="navigation">
