@@ -1,16 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const fieldsets = document.querySelectorAll("fieldset");
+    const form = document.getElementById("form");
     const progressBar = document.querySelector(".progress-bar");
-    const prevButton = document.querySelector(".prev-btn");
-    const nextButton = document.querySelector(".next-btn");
-    const submitButton = document.querySelector(".submit-btn");
-    let currentFieldsetIndex = 0;
-
-    function updateProgress() {
-        const progress = (currentFieldsetIndex / (fieldsets.length - 1)) * 100;
-        progressBar.style.width = `${progress}%`;
+    const submitBtn = document.querySelector(".submit-btn");
+    const nextBtn = document.querySelector(".next-btn");
+    const prevBtn = document.querySelector(".prev-btn");
+    
+    let currentFieldset = 0;
+    const fieldsets = form.querySelectorAll("fieldset");
+    const totalFieldsets = fieldsets.length;
+    
+    updateProgressBar();
+    
+    function updateProgressBar() {
+        const progress = (currentFieldset / (totalFieldsets - 1)) * 100;
+        progressBar.style.width = progress + "%";
     }
-
+    
     function showFieldset(index) {
         fieldsets.forEach((fieldset, i) => {
             if (i === index) {
@@ -19,44 +24,44 @@ document.addEventListener("DOMContentLoaded", function () {
                 fieldset.style.display = "none";
             }
         });
-        updateProgress();
     }
-
-    function validateCurrentFieldset() {
-        const inputs = fieldsets[currentFieldsetIndex].querySelectorAll("input[required], textarea[required]");
-        let isValid = true;
-        inputs.forEach(input => {
-            if (!input.value.trim()) {
-                isValid = false;
-            }
-        });
-        return isValid;
-    }
-
-    function navigateToFieldset(index) {
-        if (index >= 0 && index < fieldsets.length) {
-            if (index > currentFieldsetIndex && !validateCurrentFieldset()) {
-                return;
-            }
-            currentFieldsetIndex = index;
-            showFieldset(currentFieldsetIndex);
-            if (currentFieldsetIndex === 0) {
-                prevButton.style.display = "none";
-            } else {
-                prevButton.style.display = "block";
-            }
-            if (currentFieldsetIndex === fieldsets.length - 1) {
-                nextButton.style.display = "none";
-                submitButton.style.display = "block";
-            } else {
-                nextButton.style.display = "block";
-                submitButton.style.display = "none";
-            }
+    
+    function handleNext() {
+        currentFieldset++;
+        if (currentFieldset >= totalFieldsets) {
+            currentFieldset = totalFieldsets - 1;
         }
+        showFieldset(currentFieldset);
+        updateProgressBar();
     }
-
-    prevButton.addEventListener("click", () => navigateToFieldset(currentFieldsetIndex - 1));
-    nextButton.addEventListener("click", () => navigateToFieldset(currentFieldsetIndex + 1));
-
-    showFieldset(currentFieldsetIndex);
+    
+    function handlePrev() {
+        currentFieldset--;
+        if (currentFieldset < 0) {
+            currentFieldset = 0;
+        }
+        showFieldset(currentFieldset);
+        updateProgressBar();
+    }
+    
+    nextBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        handleNext();
+    });
+    
+    prevBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        handlePrev();
+    });
+    
+    submitBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        // Handle form submission logic here
+        
+        // Move to the next fieldset
+        handleNext();
+    });
+    
+    // Show the initial fieldset
+    showFieldset(currentFieldset);
 });
