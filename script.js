@@ -1,75 +1,62 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const fieldsets = document.querySelectorAll('fieldset');
-  const progressBar = document.querySelector('.progress-bar');
-  const nextButtons = document.querySelectorAll('.next-btn');
-  const prevButtons = document.querySelectorAll('.prev-btn');
-  const submitButton = document.querySelector('.submit-btn');
-  let currentFieldset = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    const fieldsets = document.querySelectorAll("fieldset");
+    const progressBar = document.querySelector(".progress-bar");
+    const prevButton = document.querySelector(".prev-btn");
+    const nextButton = document.querySelector(".next-btn");
+    const submitButton = document.querySelector(".submit-btn");
+    let currentFieldsetIndex = 0;
 
-  updateProgressBar();
-
-  // Show the current fieldset and hide the others
-  function showFieldset(index) {
-    fieldsets.forEach((fieldset, i) => {
-      fieldset.style.display = i === index ? 'block' : 'none';
-    });
-    currentFieldset = index;
-    updateProgressBar();
-  }
-
-  // Update progress bar based on current fieldset
-  function updateProgressBar() {
-    const progress = ((currentFieldset + 1) / fieldsets.length) * 100;
-    progressBar.style.width = `${progress}%`;
-  }
-
-  // Show next fieldset
-  function nextFieldset() {
-    if (currentFieldset < fieldsets.length - 1) {
-      showFieldset(currentFieldset + 1);
+    function updateProgress() {
+        const progress = (currentFieldsetIndex / (fieldsets.length - 1)) * 100;
+        progressBar.style.width = `${progress}%`;
     }
-  }
 
-  // Show previous fieldset
-  function prevFieldset() {
-    if (currentFieldset > 0) {
-      showFieldset(currentFieldset - 1);
+    function showFieldset(index) {
+        fieldsets.forEach((fieldset, i) => {
+            if (i === index) {
+                fieldset.style.display = "block";
+            } else {
+                fieldset.style.display = "none";
+            }
+        });
+        updateProgress();
     }
-  }
 
-  // Add event listeners to Next and Previous buttons
-  nextButtons.forEach(button => {
-    button.addEventListener('click', nextFieldset);
-  });
-
-  prevButtons.forEach(button => {
-    button.addEventListener('click', prevFieldset);
-  });
-
-  // Validate form before submitting
-  submitButton.addEventListener('click', function (event) {
-    event.preventDefault();
-
-    // Add your validation logic here
-    const isValid = validateForm();
-
-    if (isValid) {
-      // Submit the form
-      alert('Form submitted successfully!');
-      // You can also use AJAX to submit the form data to the server
+    function validateCurrentFieldset() {
+        const inputs = fieldsets[currentFieldsetIndex].querySelectorAll("input[required], textarea[required]");
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+            }
+        });
+        return isValid;
     }
-  });
 
-  // Your validation logic
-  function validateForm() {
-    // Implement your validation checks here
-    // Return true if the form is valid, otherwise return false
-    return true;
-  }
+    function navigateToFieldset(index) {
+        if (index >= 0 && index < fieldsets.length) {
+            if (index > currentFieldsetIndex && !validateCurrentFieldset()) {
+                return;
+            }
+            currentFieldsetIndex = index;
+            showFieldset(currentFieldsetIndex);
+            if (currentFieldsetIndex === 0) {
+                prevButton.style.display = "none";
+            } else {
+                prevButton.style.display = "block";
+            }
+            if (currentFieldsetIndex === fieldsets.length - 1) {
+                nextButton.style.display = "none";
+                submitButton.style.display = "block";
+            } else {
+                nextButton.style.display = "block";
+                submitButton.style.display = "none";
+            }
+        }
+    }
 
-  // Auto-focus on the first input field of the first fieldset
-  const firstInput = fieldsets[0].querySelector('input, textarea');
-  if (firstInput) {
-    firstInput.focus();
-  }
+    prevButton.addEventListener("click", () => navigateToFieldset(currentFieldsetIndex - 1));
+    nextButton.addEventListener("click", () => navigateToFieldset(currentFieldsetIndex + 1));
+
+    showFieldset(currentFieldsetIndex);
 });
