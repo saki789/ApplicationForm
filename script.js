@@ -1,37 +1,34 @@
-// Validate the form before submission
-function validateForm() {
-    // Add more validation logic here
-    var isValid = true;
-    // Example: Check if required fields are filled
-    var requiredFields = document.querySelectorAll('[required]');
-    requiredFields.forEach(field => {
-        if (field.value.trim() === '') {
-            isValid = false;
-            field.classList.add('error');
-        } else {
-            field.classList.remove('error');
-        }
-    });
-    return isValid;
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const fieldsets = document.querySelectorAll('.fieldset-container');
+    let currentFieldset = 0;
 
-// Initialize the form behavior
-function initForm() {
-    var form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-        if (!validateForm()) {
-            event.preventDefault();
-        }
-    });
-
-    // Remove error class on input focus
-    var inputs = document.querySelectorAll('input, textarea');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.classList.remove('error');
+    function showFieldset(fieldsetIndex) {
+        fieldsets.forEach((fieldset, index) => {
+            if (index === fieldsetIndex) {
+                fieldset.style.display = 'block';
+            } else {
+                fieldset.style.display = 'none';
+            }
         });
-    });
-}
+    }
 
-// Run initialization when the DOM is ready
-document.addEventListener('DOMContentLoaded', initForm);
+    function showNextFieldset() {
+        if (currentFieldset < fieldsets.length - 1) {
+            currentFieldset++;
+            showFieldset(currentFieldset);
+        }
+    }
+
+    function showPreviousFieldset() {
+        if (currentFieldset > 0) {
+            currentFieldset--;
+            showFieldset(currentFieldset);
+        }
+    }
+
+    // Initialize the form behavior
+    showFieldset(currentFieldset);
+
+    document.getElementById('next-button').addEventListener('click', showNextFieldset);
+    document.getElementById('previous-button').addEventListener('click', showPreviousFieldset);
+});
