@@ -11,60 +11,60 @@
         <fieldset class="fieldset-container" id="personal-info">
             <legend>Personal Information</legend>
             <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name"><br>
+            <input type="text" id="first-name" name="first-name" required><br>
             <label for="second-name">Second Name:</label>
-            <input type="text" id="second-name" name="second-name"><br>
+            <input type="text" id="second-name" name="second-name" required><br>
             <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name"><br>
+            <input type="text" id="last-name" name="last-name" required><br>
             <label for="phone-contact">Phone Contact:</label>
-            <input type="tel" id="phone-contact" name="phone-contact"><br>
+            <input type="tel" id="phone-contact" name="phone-contact" required><br>
             <label for="physical-address">Physical Address:</label>
-            <textarea id="physical-address" name="physical-address"></textarea><br>
+            <textarea id="physical-address" name="physical-address" required></textarea><br>
         </fieldset>
         
         <fieldset class="fieldset-container" id="next-of-kin">
             <legend>Next of Kin</legend>
             <label for="next-of-kin-first-name">First Name:</label>
-            <input type="text" id="next-of-kin-first-name" name="next-of-kin-first-name"><br>
+            <input type="text" id="next-of-kin-first-name" name="next-of-kin-first-name" required><br>
             <label for="next-of-kin-second-name">Second Name:</label>
-            <input type="text" id="next-of-kin-second-name" name="next-of-kin-second-name"><br>
+            <input type="text" id="next-of-kin-second-name" name="next-of-kin-second-name" required><br>
             <label for="next-of-kin-last-name">Last Name:</label>
-            <input type="text" id="next-of-kin-last-name" name="next-of-kin-last-name"><br>
+            <input type="text" id="next-of-kin-last-name" name="next-of-kin-last-name" required><br>
             <label for="relationship">Relationship:</label>
-            <input type="text" id="relationship" name="relationship"><br>
+            <input type="text" id="relationship" name="relationship" required><br>
             <label for="next-of-kin-contact">Contact:</label>
-            <input type="tel" id="next-of-kin-contact" name="next-of-kin-contact"><br>
+            <input type="tel" id="next-of-kin-contact" name="next-of-kin-contact" required><br>
         </fieldset>
         
         <fieldset class="fieldset-container" id="employment-history">
             <legend>Employment History</legend>
             <label for="employee-name">Employee Name:</label>
-            <input type="text" id="employee-name" name="employee-name"><br>
+            <input type="text" id="employee-name" name="employee-name" required><br>
             <label for="job-title">Job Title:</label>
-            <input type="text" id="job-title" name="job-title"><br>
+            <input type="text" id="job-title" name="job-title" required><br>
             <label for="employment-physical-address">Physical Address:</label>
-            <textarea id="employment-physical-address" name="employment-physical-address"></textarea><br>
+            <textarea id="employment-physical-address" name="employment-physical-address" required></textarea><br>
             <label for="employment-contact">Contact:</label>
-            <input type="tel" id="employment-contact" name="employment-contact"><br>
+            <input type="tel" id="employment-contact" name="employment-contact" required><br>
         </fieldset>
         
         <fieldset class="fieldset-container" id="education-background">
             <legend>Education Background</legend>
             <label for="institution-name">Institution Name:</label>
-            <input type="text" id="institution-name" name="institution-name"><br>
+            <input type="text" id="institution-name" name="institution-name" required><br>
             <label for="year-started">Year Started:</label>
-            <input type="number" id="year-started" name="year-started"><br>
+            <input type="number" id="year-started" name="year-started" required><br>
             <label for="year-end">Year End:</label>
-            <input type="number" id="year-end" name="year-end"><br>
+            <input type="number" id="year-end" name="year-end" required><br>
             <label for="qualification">Qualification:</label>
-            <input type="text" id="qualification" name="qualification"><br>
+            <input type="text" id="qualification" name="qualification" required><br>
         </fieldset>
         
         <div class="navigation">
-            <button onclick="showPreviousFieldset()">Previous</button>
-            <button onclick="showNextFieldset()">Next</button>
+            <button id="previous-button">Previous</button>
+            <button id="next-button">Next</button>
             <input type="submit" value="Submit">
         </div>
     </form>
 </body>
-</html>
+    </html>
