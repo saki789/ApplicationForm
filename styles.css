@@ -1,4 +1,4 @@
-/* Reset some default styling */
+/* Reset default styling */
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +20,8 @@ form {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 0.5s ease-in-out;
+    width: 80%; /* Adjust width as needed */
+    max-width: 400px; /* Set a maximum width */
 }
 
 fieldset {
@@ -74,5 +75,12 @@ button:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    form {
+        width: 90%; /* Adjust width for smaller screens */
     }
 }
