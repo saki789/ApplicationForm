@@ -9,65 +9,67 @@
 <body>
     <div class="container">
         <div class="form-container">
-            <fieldset>
-                <legend>Personal Information</legend>
-                <label for="firstName">First Name</label>
-                <input type="text" id="firstName" name="firstName" required>
-                <label for="secondName">Second Name</label>
-                <input type="text" id="secondName" name="secondName" required>
-                <label for="lastName">Last Name</label>
-                <input type="text" id="lastName" name="lastName" required>
-                <label for="phoneContact">Phone Contact</label>
-                <input type="tel" id="phoneContact" name="phoneContact" required>
-                <label for="physicalAddress">Physical Address</label>
-                <textarea id="physicalAddress" name="physicalAddress" rows="4" required></textarea>
-            </fieldset>
-            <fieldset>
-                <legend>Next of Kin</legend>
-                <label for="nextOfKinFirstName">First Name</label>
-                <input type="text" id="nextOfKinFirstName" name="nextOfKinFirstName" required>
-                <label for="nextOfKinSecondName">Second Name</label>
-                <input type="text" id="nextOfKinSecondName" name="nextOfKinSecondName" required>
-                <label for="nextOfKinLastName">Last Name</label>
-                <input type="text" id="nextOfKinLastName" name="nextOfKinLastName" required>
-                <label for="relationship">Relationship</label>
-                <input type="text" id="relationship" name="relationship" required>
-                <label for="nextOfKinContact">Contact</label>
-                <input type="tel" id="nextOfKinContact" name="nextOfKinContact" required>
-            </fieldset>
-            <fieldset>
-                <legend>Employment History</legend>
-                <label for="employeeName">Employee Name</label>
-                <input type="text" id="employeeName" name="employeeName" required>
-                <label for="jobTitle">Job Title</label>
-                <input type="text" id="jobTitle" name="jobTitle" required>
-                <label for="employmentAddress">Employment Address</label>
-                <textarea id="employmentAddress" name="employmentAddress" rows="4" required></textarea>
-                <label for="employmentContact">Contact</label>
-                <input type="tel" id="employmentContact" name="employmentContact" required>
-            </fieldset>
-            <fieldset>
-                <legend>Education Background</legend>
-                <label for="institutionName">Institution Name</label>
-                <input type="text" id="institutionName" name="institutionName" required>
-                <label for="yearStarted">Year Started</label>
-                <input type="number" id="yearStarted" name="yearStarted" required>
-                <label for="yearEnd">Year End</label>
-                <input type="number" id="yearEnd" name="yearEnd" required>
-                <label for="qualification">Qualification</label>
-                <input type="text" id="qualification" name="qualification" required>
-            </fieldset>
+            <form id="form">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <label for="secondName">Second Name</label>
+                    <input type="text" id="secondName" name="secondName" required>
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <label for="phoneContact">Phone Contact</label>
+                    <input type="tel" id="phoneContact" name="phoneContact" required>
+                    <label for="physicalAddress">Physical Address</label>
+                    <textarea id="physicalAddress" name="physicalAddress" rows="4" required></textarea>
+                </fieldset>
+                <fieldset>
+                    <legend>Next of Kin</legend>
+                    <label for="nextOfKinFirstName">First Name</label>
+                    <input type="text" id="nextOfKinFirstName" name="nextOfKinFirstName" required>
+                    <label for="nextOfKinSecondName">Second Name</label>
+                    <input type="text" id="nextOfKinSecondName" name="nextOfKinSecondName" required>
+                    <label for="nextOfKinLastName">Last Name</label>
+                    <input type="text" id="nextOfKinLastName" name="nextOfKinLastName" required>
+                    <label for="relationship">Relationship</label>
+                    <input type="text" id="relationship" name="relationship" required>
+                    <label for="nextOfKinContact">Contact</label>
+                    <input type="tel" id="nextOfKinContact" name="nextOfKinContact" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Employment History</legend>
+                    <label for="employeeName">Employee Name</label>
+                    <input type="text" id="employeeName" name="employeeName" required>
+                    <label for="jobTitle">Job Title</label>
+                    <input type="text" id="jobTitle" name="jobTitle" required>
+                    <label for="employmentAddress">Employment Address</label>
+                    <textarea id="employmentAddress" name="employmentAddress" rows="4" required></textarea>
+                    <label for="employmentContact">Contact</label>
+                    <input type="tel" id="employmentContact" name="employmentContact" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Education Background</legend>
+                    <label for="institutionName">Institution Name</label>
+                    <input type="text" id="institutionName" name="institutionName" required>
+                    <label for="yearStarted">Year Started</label>
+                    <input type="number" id="yearStarted" name="yearStarted" required>
+                    <label for="yearEnd">Year End</label>
+                    <input type="number" id="yearEnd" name="yearEnd" required>
+                    <label for="qualification">Qualification</label>
+                    <input type="text" id="qualification" name="qualification" required>
+                </fieldset>
+            </form>
             <div class="pagination">
                 <button class="prev-btn">Previous</button>
                 <div class="progress-container">
                     <div class="progress-bar"></div>
                 </div>
                 <button class="next-btn">Next</button>
-            <button class="submit-btn">Submit</button>
+                <button class="submit-btn">Submit</button>
             </div>
         </div>
     </div>
     
     <script src="script.js"></script>
 </body>
-                    </html>
+</html>
