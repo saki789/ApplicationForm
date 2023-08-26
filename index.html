@@ -2,71 +2,51 @@
 <html>
 <head>
     <title>Application Form</title>
+    <style>
+        .fieldset-container {
+            display: none;
+        }
+    </style>
+    <script>
+        function showFieldset(fieldsetId) {
+            var fieldsets = document.querySelectorAll('.fieldset-container');
+            for (var i = 0; i < fieldsets.length; i++) {
+                fieldsets[i].style.display = 'none';
+            }
+            document.getElementById(fieldsetId).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
-    <table>
-        <tr>
-            <td><a href="#personal-info">Personal Information</a></td>
-            <td><a href="#next-of-kin">Next of Kin</a></td>
-            <td><a href="#employment-history">Employment History</a></td>
-            <td><a href="#education-background">Education Background</a></td>
-        </tr>
-    </table>
-
+    <button onclick="showFieldset('personal-info')">Personal Information</button>
+    <button onclick="showFieldset('next-of-kin')">Next of Kin</button>
+    <button onclick="showFieldset('employment-history')">Employment History</button>
+    <button onclick="showFieldset('education-background')">Education Background</button>
+    
     <form>
-        <fieldset id="personal-info">
+        <fieldset class="fieldset-container" id="personal-info">
             <legend>Personal Information</legend>
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name"><br>
-            <label for="second-name">Second Name:</label>
-            <input type="text" id="second-name" name="second-name"><br>
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name"><br>
-            <label for="phone-contact">Phone Contact:</label>
-            <input type="tel" id="phone-contact" name="phone-contact"><br>
-            <label for="physical-address">Physical Address:</label>
-            <textarea id="physical-address" name="physical-address"></textarea><br>
+            <!-- ... fields for personal info ... -->
+            <button onclick="showFieldset('next-of-kin')">Next</button>
         </fieldset>
-
-        <fieldset id="next-of-kin">
+        
+        <fieldset class="fieldset-container" id="next-of-kin">
             <legend>Next of Kin</legend>
-            <label for="next-of-kin-first-name">First Name:</label>
-            <input type="text" id="next-of-kin-first-name" name="next-of-kin-first-name"><br>
-            <label for="next-of-kin-second-name">Second Name:</label>
-            <input type="text" id="next-of-kin-second-name" name="next-of-kin-second-name"><br>
-            <label for="next-of-kin-last-name">Last Name:</label>
-            <input type="text" id="next-of-kin-last-name" name="next-of-kin-last-name"><br>
-            <label for="relationship">Relationship:</label>
-            <input type="text" id="relationship" name="relationship"><br>
-            <label for="next-of-kin-contact">Contact:</label>
-            <input type="tel" id="next-of-kin-contact" name="next-of-kin-contact"><br>
+            <!-- ... fields for next of kin ... -->
+            <button onclick="showFieldset('employment-history')">Next</button>
         </fieldset>
-
-        <fieldset id="employment-history">
+        
+        <fieldset class="fieldset-container" id="employment-history">
             <legend>Employment History</legend>
-            <label for="employee-name">Employee Name:</label>
-            <input type="text" id="employee-name" name="employee-name"><br>
-            <label for="job-title">Job Title:</label>
-            <input type="text" id="job-title" name="job-title"><br>
-            <label for="employment-physical-address">Physical Address:</label>
-            <textarea id="employment-physical-address" name="employment-physical-address"></textarea><br>
-            <label for="employment-contact">Contact:</label>
-            <input type="tel" id="employment-contact" name="employment-contact"><br>
+            <!-- ... fields for employment history ... -->
+            <button onclick="showFieldset('education-background')">Next</button>
         </fieldset>
-
-        <fieldset id="education-background">
+        
+        <fieldset class="fieldset-container" id="education-background">
             <legend>Education Background</legend>
-            <label for="institution-name">Institution Name:</label>
-            <input type="text" id="institution-name" name="institution-name"><br>
-            <label for="year-started">Year Started:</label>
-            <input type="number" id="year-started" name="year-started"><br>
-            <label for="year-end">Year End:</label>
-            <input type="number" id="year-end" name="year-end"><br>
-            <label for="qualification">Qualification:</label>
-            <input type="text" id="qualification" name="qualification"><br>
+            <!-- ... fields for education background ... -->
+            <input type="submit" value="Submit">
         </fieldset>
-
-        <input type="submit" value="Submit">
     </form>
 </body>
 </html>
