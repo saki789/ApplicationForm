@@ -4,8 +4,17 @@
     <title>Application Form</title>
 </head>
 <body>
+    <table>
+        <tr>
+            <td><a href="#personal-info">Personal Information</a></td>
+            <td><a href="#next-of-kin">Next of Kin</a></td>
+            <td><a href="#employment-history">Employment History</a></td>
+            <td><a href="#education-background">Education Background</a></td>
+        </tr>
+    </table>
+
     <form>
-        <fieldset>
+        <fieldset id="personal-info">
             <legend>Personal Information</legend>
             <label for="first-name">First Name:</label>
             <input type="text" id="first-name" name="first-name"><br>
@@ -13,15 +22,13 @@
             <input type="text" id="second-name" name="second-name"><br>
             <label for="last-name">Last Name:</label>
             <input type="text" id="last-name" name="last-name"><br>
-            <label for="territory">Territory:</label>
-            <input type="text" id="territory" name="territory"><br>
             <label for="phone-contact">Phone Contact:</label>
             <input type="tel" id="phone-contact" name="phone-contact"><br>
             <label for="physical-address">Physical Address:</label>
             <textarea id="physical-address" name="physical-address"></textarea><br>
         </fieldset>
 
-        <fieldset>
+        <fieldset id="next-of-kin">
             <legend>Next of Kin</legend>
             <label for="next-of-kin-first-name">First Name:</label>
             <input type="text" id="next-of-kin-first-name" name="next-of-kin-first-name"><br>
@@ -35,7 +42,7 @@
             <input type="tel" id="next-of-kin-contact" name="next-of-kin-contact"><br>
         </fieldset>
 
-        <fieldset>
+        <fieldset id="employment-history">
             <legend>Employment History</legend>
             <label for="employee-name">Employee Name:</label>
             <input type="text" id="employee-name" name="employee-name"><br>
@@ -47,7 +54,7 @@
             <input type="tel" id="employment-contact" name="employment-contact"><br>
         </fieldset>
 
-        <fieldset>
+        <fieldset id="education-background">
             <legend>Education Background</legend>
             <label for="institution-name">Institution Name:</label>
             <input type="text" id="institution-name" name="institution-name"><br>
@@ -62,4 +69,4 @@
         <input type="submit" value="Submit">
     </form>
 </body>
-</html>
+                </html>
