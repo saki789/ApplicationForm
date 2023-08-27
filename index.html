@@ -3,113 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
     <title>Registration Form</title>
 </head>
 <body>
-    <h1>Web Application - Registration Form</h1>
-    
+    <h1>Registration Form</h1>
     <form id="registration-form">
-        <!-- Step 1: Personal Information -->
-        <fieldset id="step1" class="form-step">
-            <legend>Personal Information</legend>
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" required placeholder="John">
-            <span class="error-message" id="first-name-error"></span>
-            
-            <label for="middle-name">Middle Name:</label>
-            <input type="text" id="middle-name" placeholder="Michael">
-            
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" required placeholder="Doe">
-            <span class="error-message" id="last-name-error"></span>
-            
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" required placeholder="YYYY-MM-DD">
-            
-            <label for="address">Address:</label>
-            <textarea id="address" rows="4" required placeholder="123 Main St, City, Country"></textarea>
-            
-            <label for="phone">Phone Contact:</label>
-            <input type="tel" id="phone" required placeholder="123-456-7890">
-            
-            <label for="passport">Passport Number:</label>
-            <input type="text" id="passport" required placeholder="ABC123456">
-            
-            <label for="tin">TIN Number:</label>
-            <input type="text" id="tin" required placeholder="123-456-789">
-            
+        <!-- Fieldset 1: Personal Information -->
+        <fieldset class="form-step">
+            <!-- ... fields for personal information ... -->
             <button type="button" id="next1">Next</button>
         </fieldset>
-
-        <!-- Step 2: Employment History -->
-        <fieldset id="step2" class="form-step hidden">
-            <legend>Employment History</legend>
-            <label for="employer-name">Name of Employer:</label>
-            <input type="text" id="employer-name" required placeholder="ABC Company">
-            <span class="error-message" id="employer-name-error"></span>
-            
-            <label for="job-title">Job Title:</label>
-            <input type="text" id="job-title" required placeholder="Software Engineer">
-            <span class="error-message" id="job-title-error"></span>
-            
-            <label for="employer-address">Employer Address:</label>
-            <textarea id="employer-address" rows="4" required placeholder="456 Business Rd, City, Country"></textarea>
-            <span class="error-message" id="employer-address-error"></span>
-            
-            <label for="employer-phone">Employer Phone:</label>
-            <input type="tel" id="employer-phone" required placeholder="123-456-7890">
-            <span class="error-message" id="employer-phone-error"></span>
-            
+        
+        <!-- Fieldset 2: Employment History -->
+        <fieldset class="form-step hidden">
+            <!-- ... fields for employment history ... -->
             <button type="button" id="prev2">Previous</button>
             <button type="button" id="next2">Next</button>
         </fieldset>
-
-        <!-- Step 3: Education Background -->
-        <fieldset id="step3" class="form-step hidden">
-            <legend>Education Background</legend>
-            <label for="institution-name">Institution Name:</label>
-            <input type="text" id="institution-name" required placeholder="XYZ University">
-            <span class="error-message" id="institution-name-error"></span>
-            
-            <label for="start-year">Year Start:</label>
-            <input type="number" id="start-year" required placeholder="20XX">
-            <span class="error-message" id="start-year-error"></span>
-            
-            <label for="end-year">Year End:</label>
-            <input type="number" id="end-year" required placeholder="20XX">
-            <span class="error-message" id="end-year-error"></span>
-            
-            <label for="qualification">Qualification:</label>
-            <input type="text" id="qualification" required placeholder="Bachelor's Degree">
-            <span class="error-message" id="qualification-error"></span>
-            
+        
+        <!-- Fieldset 3: Education Background -->
+        <fieldset class="form-step hidden">
+            <!-- ... fields for education background ... -->
             <button type="button" id="prev3">Previous</button>
             <button type="button" id="next3">Next</button>
         </fieldset>
-
-        <!-- Step 4: Bank Details -->
-        <fieldset id="step4" class="form-step hidden">
-            <legend>Bank Details</legend>
-            <label for="bank-name">Bank Name:</label>
-            <input type="text" id="bank-name" required placeholder="XYZ Bank">
-            <span class="error-message" id="bank-name-error"></span>
-            
-            <label for="account-holder">Account Holder:</label>
-            <input type="text" id="account-holder" required placeholder="John Doe">
-            <span class="error-message" id="account-holder-error"></span>
-            
-            <label for="account-number">Account Number:</label>
-            <input type="text" id="account-number" required placeholder="123456789">
-            <span class="error-message" id="account-number-error"></span>
-            
+        
+        <!-- Fieldset 4: Bank Details -->
+        <fieldset class="form-step hidden">
+            <!-- ... fields for bank details ... -->
             <button type="button" id="prev4">Previous</button>
             <button type="submit">Submit</button>
         </fieldset>
     </form>
-
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
