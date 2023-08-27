@@ -3,39 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <title>Registration Form</title>
 </head>
 <body>
-    <h1>Registration Form</h1>
-    <form id="registration-form">
-        <!-- Fieldset 1: Personal Information -->
-        <fieldset class="form-step">
-            <!-- ... fields for personal information ... -->
-            <button type="button" id="next1">Next</button>
-        </fieldset>
-        
-        <!-- Fieldset 2: Employment History -->
-        <fieldset class="form-step hidden">
-            <!-- ... fields for employment history ... -->
-            <button type="button" id="prev2">Previous</button>
-            <button type="button" id="next2">Next</button>
-        </fieldset>
-        
-        <!-- Fieldset 3: Education Background -->
-        <fieldset class="form-step hidden">
-            <!-- ... fields for education background ... -->
-            <button type="button" id="prev3">Previous</button>
-            <button type="button" id="next3">Next</button>
-        </fieldset>
-        
-        <!-- Fieldset 4: Bank Details -->
-        <fieldset class="form-step hidden">
-            <!-- ... fields for bank details ... -->
-            <button type="button" id="prev4">Previous</button>
-            <button type="submit">Submit</button>
-        </fieldset>
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+    <form id="application-form">
+        <div class="form-section" id="personal-info">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+            </div>
+            <!-- Add other personal info fields here -->
+        </div>
+
+        <div class="form-section" id="next-of-kin">
+            <h2>Next of Kin</h2>
+            <div class="form-group">
+                <label for="kin-first-name">First Name</label>
+                <input type="text" id="kin-first-name" name="kin-first-name" required>
+            </div>
+            <!-- Add other next of kin fields here -->
+        </div>
+
+        <div class="form-section" id="employment-history">
+            <h2>Employment History</h2>
+            <div class="form-group">
+                <label for="employee-name">Employee Name</label>
+                <input type="text" id="employee-name" name="employee-name" required>
+            </div>
+            <!-- Add other employment history fields here -->
+        </div>
+
+        <div class="form-section" id="education-background">
+            <h2>Education Background</h2>
+            <div class="form-group">
+                <label for="institution-name">Institution Name</label>
+                <input type="text" id="institution-name" name="institution-name" required>
+            </div>
+            <!-- Add other education background fields here -->
+        </div>
+
+        <div class="pagination">
+            <button type="button" id="previous-btn">Previous</button>
+            <button type="button" id="next-btn">Next</button>
+        </div>
+
+        <button type="submit" id="submit-btn">Submit</button>
     </form>
+
+    <script src="script.js"></script>
 </body>
-</html>
+                    </html>
