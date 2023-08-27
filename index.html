@@ -1,45 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Grid Security Company Employment Application</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>Registration Form</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Grid Security Company Employment Application</h1>
-        
-        <form action="#" method="post" id="employmentForm">
-            <div class="page" id="page1">
-                <fieldset>
-                    <legend>Personal Details</legend>
-                    <label for="first_name">First Name:</label>
-                    <input type="text" id="first_name" name="first_name"><br>
-                    <label for="middle_name">Middle Name:</label>
-                    <input type="text" id="middle_name" name="middle_name"><br>
-                    <label for="last_name">Last Name:</label>
-                    <input type="text" id="last_name" name="last_name"><br>
-                    <label for="date_of_birth">Date of Birth:</label>
-                    <input type="date" id="date_of_birth" name="date_of_birth"><br>
-                    <label for="physical_address">Physical Address:</label>
-                    <input type="text" id="physical_address" name="physical_address"><br>
-                    <label for="phone_contact">Phone Contact:</label>
-                    <input type="tel" id="phone_contact" name="phone_contact"><br>
-                </fieldset>
-                <div class="pagination">
-                    <button type="button" onclick="showPage(2)">Next</button>
-                </div>
-            </div>
-            
-            <!-- Other pages with fieldsets and pagination -->
-            
-            <div class="buttons">
-                <button type="button" id="prevButton" onclick="showPreviousPage()">Previous</button>
-                <button type="button" id="nextButton" onclick="showNextPage()">Next</button>
-                <input type="submit" id="submitButton" value="Submit">
-            </div>
-        </form>
-    </div>
+    <h1>Web Application - Registration Form</h1>
     
-    <script src="scripts.js"></script>
+    <form id="registration-form">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" required>
+            
+            <label for="middle-name">Middle Name:</label>
+            <input type="text" id="middle-name">
+            
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" required>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required>
+            
+            <label for="address">Address:</label>
+            <textarea id="address" rows="4" required></textarea>
+            
+            <label for="phone">Phone Contact:</label>
+            <input type="tel" id="phone" required>
+            
+            <label for="passport">Passport Number:</label>
+            <input type="text" id="passport" required>
+            
+            <label for="tin">TIN Number:</label>
+            <input type="text" id="tin" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Employment History</legend>
+            <label for="employer-name">Name of Employer:</label>
+            <input type="text" id="employer-name" required>
+            
+            <label for="job-title">Job Title:</label>
+            <input type="text" id="job-title" required>
+            
+            <label for="employer-address">Employer Address:</label>
+            <textarea id="employer-address" rows="4" required></textarea>
+            
+            <label for="employer-phone">Employer Phone:</label>
+            <input type="tel" id="employer-phone" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Education Background</legend>
+            <label for="institution-name">Institution Name:</label>
+            <input type="text" id="institution-name" required>
+            
+            <label for="start-year">Year Start:</label>
+            <input type="number" id="start-year" required>
+            
+            <label for="end-year">Year End:</label>
+            <input type="number" id="end-year" required>
+            
+            <label for="qualification">Qualification:</label>
+            <input type="text" id="qualification" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Bank Details</legend>
+            <label for="bank-name">Bank Name:</label>
+            <input type="text" id="bank-name" required>
+            
+            <label for="account-holder">Account Holder:</label>
+            <input type="text" id="account-holder" required>
+            
+            <label for="account-number">Account Number:</label>
+            <input type="text" id="account-number" required>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
-</html>
+    </html>
