@@ -1,76 +1,83 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById("registration-form");
-  
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    
-    let isValid = true;
-    
-    isValid = validateField("first-name", "This field is required.") && isValid;
-    isValid = validateField("middle-name", "") && isValid;
-    isValid = validateField("last-name", "This field is required.") && isValid;
-    isValid = validateField("dob", "This field is required.") && isValid;
-    isValid = validateField("address", "This field is required.") && isValid;
-    isValid = validateField("phone", "This field is required.") && isValid;
-    isValid = validateField("passport", "This field is required.") && isValid;
-    isValid = validateField("tin", "This field is required.") && isValid;
+    const form = document.getElementById("registration-form");
+    const steps = document.querySelectorAll(".form-step");
+    let currentStep = 0;
 
-    isValid = validateField("employer-name", "This field is required.") && isValid;
-    isValid = validateField("job-title", "This field is required.") && isValid;
-    isValid = validateField("employer-address", "This field is required.") && isValid;
-    isValid = validateField("employer-phone", "This field is required.") && isValid;
-
-    isValid = validateField("institution-name", "This field is required.") && isValid;
-    isValid = validateField("start-year", "This field is required.") && isValid;
-    isValid = validateField("end-year", "This field is required.") && isValid;
-    isValid = validateField("qualification", "This field is required.") && isValid;
-
-    isValid = validateField("bank-name", "This field is required.") && isValid;
-    isValid = validateField("account-holder", "This field is required.") && isValid;
-    isValid = validateField("account-number", "This field is required.") && isValid;
-
-    if (isValid) {
-      // Prepare and send form data to server
-      const formData = new FormData(form);
-
-      fetch("server-url", {
-        method: "POST",
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          // Display success message or redirect to success page
-        } else {
-          // Display error message
-        }
-      })
-      .catch(error => {
-        console.error("Error:", error);
-      });
+    // Show the current step and hide others
+    function showStep(stepIndex) {
+        steps.forEach((step, index) => {
+            if (index === stepIndex) {
+                step.classList.remove("hidden");
+            } else {
+                step.classList.add("hidden");
+            }
+        });
     }
-  });
+
+    // Validate field and show/hide error message
+    function validateField(fieldId, errorMessage) {
+        const field = document.getElementById(fieldId);
+        const value = field.value.trim();
+        const errorElement = field.nextElementSibling;
+
+        if (value === "") {
+            showError(errorElement, errorMessage);
+            return false;
+        }
+
+        hideError(errorElement);
+        return true;
+    }
+
+    // Show error message
+    function showError(errorElement, errorMessage) {
+        errorElement.textContent = errorMessage;
+    }
+
+    // Hide error message
+    function hideError(errorElement) {
+        errorElement.textContent = "";
+    }
+
+    // Next button click event
+    form.querySelectorAll('[id^="next"]').forEach((nextButton, index) => {
+        nextButton.addEventListener("click", function() {
+            if (currentStep < steps.length - 1) {
+                // Validate fields before proceeding
+                const fieldsToValidate = getFieldsToValidate(currentStep);
+                let isValid = true;
+
+                fieldsToValidate.forEach(fieldId => {
+                    isValid = validateField(fieldId, "This field is required.") && isValid;
+                });
+
+                if (isValid) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            }
+        });
+    });
+
+    // Previous button click event
+    form.querySelectorAll('[id^="prev"]').forEach((prevButton, index) => {
+        prevButton.addEventListener("click", function() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    // Get field IDs to validate for the current step
+    function getFieldsToValidate(stepIndex) {
+        const fields = [
+            ["first-name", "last-name", "dob", "address", "phone", "passport", "tin"], // Step 1
+            ["employer-name", "job-title", "employer-address", "employer-phone"],       // Step 2
+            ["institution-name", "start-year", "end-year", "qualification"],           // Step 3
+            ["bank-name", "account-holder", "account-number"]                         // Step 4
+        ];
+
+        return fields[stepIndex];
+    }
 });
-
-function validateField(fieldId, errorMessage) {
-  const field = document.getElementById(fieldId);
-  const value = field.value.trim();
-  
-  const errorElement = field.nextElementSibling;
-  
-  if (value === "") {
-    showError(errorElement, errorMessage);
-    return false;
-  }
-  
-  hideError(errorElement);
-  return true;
-}
-
-function showError(errorElement, errorMessage) {
-  errorElement.textContent = errorMessage;
-}
-
-function hideError(errorElement) {
-  errorElement.textContent = "";
-}
