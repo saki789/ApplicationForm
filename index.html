@@ -10,7 +10,8 @@
     <h1>Web Application - Registration Form</h1>
     
     <form id="registration-form">
-        <fieldset>
+        <!-- Step 1: Personal Information -->
+        <fieldset id="step1" class="form-step">
             <legend>Personal Information</legend>
             <label for="first-name">First Name:</label>
             <input type="text" id="first-name" required>
@@ -35,9 +36,12 @@
             
             <label for="tin">TIN Number:</label>
             <input type="text" id="tin" required>
+            
+            <button type="button" id="next1">Next</button>
         </fieldset>
 
-        <fieldset>
+        <!-- Step 2: Employment History -->
+        <fieldset id="step2" class="form-step hidden">
             <legend>Employment History</legend>
             <label for="employer-name">Name of Employer:</label>
             <input type="text" id="employer-name" required>
@@ -50,9 +54,13 @@
             
             <label for="employer-phone">Employer Phone:</label>
             <input type="tel" id="employer-phone" required>
+            
+            <button type="button" id="prev2">Previous</button>
+            <button type="button" id="next2">Next</button>
         </fieldset>
 
-        <fieldset>
+        <!-- Step 3: Education Background -->
+        <fieldset id="step3" class="form-step hidden">
             <legend>Education Background</legend>
             <label for="institution-name">Institution Name:</label>
             <input type="text" id="institution-name" required>
@@ -65,9 +73,13 @@
             
             <label for="qualification">Qualification:</label>
             <input type="text" id="qualification" required>
+            
+            <button type="button" id="prev3">Previous</button>
+            <button type="button" id="next3">Next</button>
         </fieldset>
 
-        <fieldset>
+        <!-- Step 4: Bank Details -->
+        <fieldset id="step4" class="form-step hidden">
             <legend>Bank Details</legend>
             <label for="bank-name">Bank Name:</label>
             <input type="text" id="bank-name" required>
@@ -77,11 +89,12 @@
             
             <label for="account-number">Account Number:</label>
             <input type="text" id="account-number" required>
+            
+            <button type="button" id="prev4">Previous</button>
+            <button type="submit">Submit</button>
         </fieldset>
-
-        <button type="submit">Submit</button>
     </form>
 
     <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
-    </html>
+                </html>
