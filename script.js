@@ -17,11 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
     form.querySelectorAll('[id^="next"]').forEach((nextButton, index) => {
         nextButton.addEventListener("click", function() {
             if (currentStep < steps.length - 1) {
-                const currentFields = getFieldsToValidate(currentStep);
-                if (validateFields(currentFields)) {
-                    currentStep++;
-                    showStep(currentStep);
-                }
+                currentStep++;
+                showStep(currentStep);
             }
         });
     });
@@ -35,33 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-
-    // Function to validate fields
-    function validateFields(fieldIds) {
-        let valid = true;
-        fieldIds.forEach((fieldId) => {
-            const field = document.getElementById(fieldId);
-            if (field.value.trim() === "") {
-                valid = false;
-                field.classList.add("error");
-            } else {
-                field.classList.remove("error");
-            }
-        });
-        return valid;
-    }
-
-    // Function to get fields to validate for each step
-    function getFieldsToValidate(stepIndex) {
-        const fields = [
-            ["first-name", "last-name"], // Step 1: Personal Information
-            ["employer-name", "job-title", "employer-address", "employer-phone"], // Step 2: Employment History
-            ["institution-name", "qualification"], // Step 3: Education Background
-            ["bank-name", "account-holder", "account-number"], // Step 4: Bank Details
-            ["team-number"] // Step 5: Team Number
-        ];
-        return fields[stepIndex];
-    }
 
     // Initially show the first step
     showStep(currentStep);
