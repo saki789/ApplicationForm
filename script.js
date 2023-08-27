@@ -17,18 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
     form.querySelectorAll('[id^="next"]').forEach((nextButton, index) => {
         nextButton.addEventListener("click", function() {
             if (currentStep < steps.length - 1) {
-                // Validate fields before proceeding
-                const fieldsToValidate = getFieldsToValidate(currentStep);
-                let isValid = true;
-
-                fieldsToValidate.forEach(fieldId => {
-                    isValid = validateField(fieldId, "This field is required.") && isValid;
-                });
-
-                if (isValid) {
-                    currentStep++;
-                    showStep(currentStep);
-                }
+                currentStep++;
+                showStep(currentStep);
             }
         });
     });
@@ -42,18 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
-
-    // Get field IDs to validate for the current step
-    function getFieldsToValidate(stepIndex) {
-        const fields = [
-            ["first-name", "middle-name", "last-name", "dob", "address", "phone", "passport", "tin"],
-            ["employer-name", "job-title", "employer-address", "employer-phone"],
-            ["institution-name", "start-year", "end-year", "qualification"],
-            ["bank-name", "account-holder", "account-number"]
-        ];
-
-        return fields[stepIndex];
-    }
 
     // Initially show the first step
     showStep(currentStep);
