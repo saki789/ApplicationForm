@@ -1,127 +1,57 @@
-/* Apply general styles to form elements */
+/* Add your CSS styling here */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
 }
 
-h1 {
-    text-align: center;
-    padding: 20px 0;
-    color: #333;
+.progress-bar {
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-form {
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
+.progress {
+    background-color: #007bff;
+    height: 10px;
+    width: 25%; /* Set width dynamically with JavaScript */
+    transition: width 0.5s ease-in-out; /* Smooth transition for width change */
+}
+
+.form-section {
+    margin-bottom: 20px;
     padding: 20px;
     background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    animation: fade-in 0.5s ease, slide-up 1s ease;
-}
-
-/* Style input fields and textareas */
-input[type="text"],
-input[type="date"],
-input[type="tel"],
-input[type="number"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f7f7f7;
-    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #00b894;
     border-radius: 5px;
 }
 
-/* Style submit and navigation buttons */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
 button {
-    background-color: #007bff;
-    color: #fff;
     padding: 10px 20px;
+    background-color: #f39c12;
     border: none;
+    color: #fff;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    animation: button-pulse 1s infinite, button-slide 1s ease;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #e67e22;
 }
 
-/* Pagination navigation buttons */
-#prev2,
-#prev3,
-#prev4 {
-    background-color: #ccc;
-}
-
-#prev2:hover,
-#prev3:hover,
-#prev4:hover,
-#next1:hover,
-#next2:hover,
-#next3:hover {
-    background-color: #555;
-}
-
-/* Hide and show form steps */
-.form-step {
-    display: none;
-}
-
-.form-step:first-child {
-    display: block;
-}
-
-/* Responsive design */
-@media screen and (max-width: 600px) {
-    form {
-        width: 100%;
-    }
-}
-
-/* Animation keyframes */
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slide-up {
-    from {
-        transform: translateY(50px);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes button-pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes button-slide {
-    from {
-        transform: translateX(-50px);
-    }
-    to {
-        transform: translateX(0);
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .form-section {
+        padding: 10px;
     }
 }
