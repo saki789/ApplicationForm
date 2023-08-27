@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const steps = document.querySelectorAll(".form-step");
     let currentStep = 0;
 
-    // Show the current step and hide others
     function showStep(stepIndex) {
         steps.forEach((step, index) => {
             if (index === stepIndex) {
@@ -12,31 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 step.classList.add("hidden");
             }
         });
-    }
-
-    // Validate field and show/hide error message
-    function validateField(fieldId, errorMessage) {
-        const field = document.getElementById(fieldId);
-        const value = field.value.trim();
-        const errorElement = document.getElementById(fieldId + "-error"); // Corresponding error message element
-
-        if (value === "") {
-            showError(errorElement, errorMessage);
-            return false;
-        }
-
-        hideError(errorElement);
-        return true;
-    }
-
-    // Show error message
-    function showError(errorElement, errorMessage) {
-        errorElement.textContent = errorMessage;
-    }
-
-    // Hide error message
-    function hideError(errorElement) {
-        errorElement.textContent = "";
     }
 
     // Next button click event
