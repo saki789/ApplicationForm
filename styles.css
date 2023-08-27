@@ -31,6 +31,16 @@ textarea {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    transition: border-color 0.3s ease; /* Add transition effect */
+}
+
+/* Style input fields with validation errors */
+input[type="text"]:invalid,
+input[type="date"]:invalid,
+input[type="tel"]:invalid,
+input[type="number"]:invalid,
+textarea:invalid {
+    border-color: red;
 }
 
 /* Style submit and navigation buttons */
