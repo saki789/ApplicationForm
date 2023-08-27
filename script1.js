@@ -1,38 +1,62 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("registration-form");
-    const steps = document.querySelectorAll(".form-step");
-    let currentStep = 0;
+    const formSections = document.querySelectorAll('.form-section');
+    const progressBar = document.querySelector('.progress');
+    const nextBtn = document.getElementById('next-btn');
+    const previousBtn = document.getElementById('previous-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    let currentSectionIndex = 0;
 
-    function showStep(stepIndex) {
-        steps.forEach((step, index) => {
-            if (index === stepIndex) {
-                step.classList.remove("hidden");
-            } else {
-                step.classList.add("hidden");
-            }
-        });
+    // Hide all sections except the first one
+    formSections.forEach((section, index) => {
+        if (index !== currentSectionIndex) {
+            section.style.display = 'none';
+        }
+    });
+
+    // Update progress bar width
+    function updateProgressBar() {
+        const totalSections = formSections.length;
+        const progressWidth = (currentSectionIndex / (totalSections - 1)) * 100;
+        progressBar.style.width = `${progressWidth}%`;
+    }
+
+    // Show the current section
+    function showCurrentSection() {
+        formSections[currentSectionIndex].style.display = 'block';
+        updateProgressBar();
+    }
+
+    // Hide the current section
+    function hideCurrentSection() {
+        formSections[currentSectionIndex].style.display = 'none';
     }
 
     // Next button click event
-    form.querySelectorAll('[id^="next"]').forEach((nextButton, index) => {
-        nextButton.addEventListener("click", function() {
-            if (currentStep < steps.length - 1) {
-                currentStep++;
-                showStep(currentStep);
-            }
-        });
+    nextBtn.addEventListener('click', function() {
+        hideCurrentSection();
+        currentSectionIndex++;
+        if (currentSectionIndex >= formSections.length) {
+            currentSectionIndex = formSections.length - 1;
+        }
+        showCurrentSection();
     });
 
     // Previous button click event
-    form.querySelectorAll('[id^="prev"]').forEach((prevButton, index) => {
-        prevButton.addEventListener("click", function() {
-            if (currentStep > 0) {
-                currentStep--;
-                showStep(currentStep);
-            }
-        });
+    previousBtn.addEventListener('click', function() {
+        hideCurrentSection();
+        currentSectionIndex--;
+        if (currentSectionIndex < 0) {
+            currentSectionIndex = 0;
+        }
+        showCurrentSection();
     });
 
-    // Initially show the first step
-    showStep(currentStep);
+    // Submit button click event (placeholder)
+    submitBtn.addEventListener('click', function() {
+        alert('Form submitted successfully!');
+    });
+
+    // Show the first section initially
+    showCurrentSection();
 });
