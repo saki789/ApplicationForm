@@ -24,15 +24,15 @@ form {
     animation: fade-in 0.5s ease; /* Add fade-in animation */
 }
 
-/* ... other styles ... */
-
 /* Style input fields and textareas */
 input[type="text"],
 input[type="date"],
 input[type="tel"],
 input[type="number"],
 textarea {
-    /* ... other styles ... */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
     background-color: #f7f7f7; /* Light background color */
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -50,7 +50,6 @@ textarea:invalid {
 
 /* Style submit and navigation buttons */
 button {
-    /* ... other styles ... */
     background-color: #007bff; /* Blue button color */
     color: #fff;
     padding: 10px 20px;
@@ -65,7 +64,44 @@ button:hover {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* ... other styles ... */
+/* Style error messages */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Pagination navigation buttons */
+#prev2,
+#prev3,
+#prev4 {
+    background-color: #ccc;
+}
+
+#prev2:hover,
+#prev3:hover,
+#prev4:hover,
+#next1:hover,
+#next2:hover,
+#next3:hover {
+    background-color: #555;
+}
+
+/* Hide and show form steps */
+.form-step {
+    display: none;
+}
+
+.form-step:first-child {
+    display: block;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    form {
+        width: 100%;
+    }
+}
 
 /* Animation keyframes */
 @keyframes fade-in {
