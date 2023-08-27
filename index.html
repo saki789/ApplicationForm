@@ -15,12 +15,14 @@
             <legend>Personal Information</legend>
             <label for="first-name">First Name:</label>
             <input type="text" id="first-name" required placeholder="John">
+            <span class="error-message" id="first-name-error"></span>
             
             <label for="middle-name">Middle Name:</label>
             <input type="text" id="middle-name" placeholder="Michael">
             
             <label for="last-name">Last Name:</label>
             <input type="text" id="last-name" required placeholder="Doe">
+            <span class="error-message" id="last-name-error"></span>
             
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" required placeholder="YYYY-MM-DD">
@@ -45,15 +47,19 @@
             <legend>Employment History</legend>
             <label for="employer-name">Name of Employer:</label>
             <input type="text" id="employer-name" required placeholder="ABC Company">
+            <span class="error-message" id="employer-name-error"></span>
             
             <label for="job-title">Job Title:</label>
             <input type="text" id="job-title" required placeholder="Software Engineer">
+            <span class="error-message" id="job-title-error"></span>
             
             <label for="employer-address">Employer Address:</label>
             <textarea id="employer-address" rows="4" required placeholder="456 Business Rd, City, Country"></textarea>
+            <span class="error-message" id="employer-address-error"></span>
             
             <label for="employer-phone">Employer Phone:</label>
             <input type="tel" id="employer-phone" required placeholder="123-456-7890">
+            <span class="error-message" id="employer-phone-error"></span>
             
             <button type="button" id="prev2">Previous</button>
             <button type="button" id="next2">Next</button>
@@ -64,15 +70,19 @@
             <legend>Education Background</legend>
             <label for="institution-name">Institution Name:</label>
             <input type="text" id="institution-name" required placeholder="XYZ University">
+            <span class="error-message" id="institution-name-error"></span>
             
             <label for="start-year">Year Start:</label>
             <input type="number" id="start-year" required placeholder="20XX">
+            <span class="error-message" id="start-year-error"></span>
             
             <label for="end-year">Year End:</label>
             <input type="number" id="end-year" required placeholder="20XX">
+            <span class="error-message" id="end-year-error"></span>
             
             <label for="qualification">Qualification:</label>
             <input type="text" id="qualification" required placeholder="Bachelor's Degree">
+            <span class="error-message" id="qualification-error"></span>
             
             <button type="button" id="prev3">Previous</button>
             <button type="button" id="next3">Next</button>
@@ -83,12 +93,15 @@
             <legend>Bank Details</legend>
             <label for="bank-name">Bank Name:</label>
             <input type="text" id="bank-name" required placeholder="XYZ Bank">
+            <span class="error-message" id="bank-name-error"></span>
             
             <label for="account-holder">Account Holder:</label>
             <input type="text" id="account-holder" required placeholder="John Doe">
+            <span class="error-message" id="account-holder-error"></span>
             
             <label for="account-number">Account Number:</label>
             <input type="text" id="account-number" required placeholder="123456789">
+            <span class="error-message" id="account-number-error"></span>
             
             <button type="button" id="prev4">Previous</button>
             <button type="submit">Submit</button>
@@ -97,4 +110,4 @@
 
     <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
-                </html>
+</html>
