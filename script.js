@@ -54,4 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         return fields[stepIndex];
     }
+
+    // Initially show the first step
+    showStep(currentStep);
 });
