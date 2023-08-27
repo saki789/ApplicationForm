@@ -9,13 +9,13 @@ body {
     background-color: #f0f0f0;
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: progressAnimation 1s ease-in-out;
 }
 
-.progress {
-    background-color: #007bff;
-    height: 10px;
-    width: 25%; /* Set width dynamically with JavaScript */
-    transition: width 0.5s ease-in-out; /* Smooth transition for width change */
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
 }
 
 .form-section {
@@ -25,17 +25,29 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: 2px solid #00b894;
     border-radius: 5px;
+    animation: formAnimation 1s ease-in-out;
+}
+
+@keyframes formAnimation {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
 }
 
 .form-group {
     margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .pagination {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
 }
 
-button {
+.pagination button {
+    margin: 0 10px;
     padding: 10px 20px;
     background-color: #f39c12;
     border: none;
@@ -45,7 +57,7 @@ button {
     transition: background-color 0.3s ease-in-out;
 }
 
-button:hover {
+.pagination button:hover {
     background-color: #e67e22;
 }
 
