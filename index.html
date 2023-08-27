@@ -2,49 +2,77 @@
 <html>
 <head>
     <title>Grid Security Company Employment Application</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>Grid Security Company Employment Application</h1>
     
     <form action="#" method="post">
-        <fieldset>
-            <legend>Personal Details</legend>
-            First Name: <input type="text" name="first_name"><br>
-            Middle Name: <input type="text" name="middle_name"><br>
-            Last Name: <input type="text" name="last_name"><br>
-            Date of Birth: <input type="date" name="date_of_birth"><br>
-            Physical Address: <input type="text" name="physical_address"><br>
-            Phone Contact: <input type="tel" name="phone_contact"><br>
-        </fieldset>
+        <div class="page" id="page1">
+            <fieldset>
+                <!-- Personal Details fields -->
+                <legend>Personal Details</legend>
+                First Name: <input type="text" name="first_name"><br>
+                Middle Name: <input type="text" name="middle_name"><br>
+                Last Name: <input type="text" name="last_name"><br>
+                Date of Birth: <input type="date" name="date_of_birth"><br>
+                Physical Address: <input type="text" name="physical_address"><br>
+                Phone Contact: <input type="tel" name="phone_contact"><br>
+            </fieldset>
+            <div class="pagination">
+                <button type="button" onclick="showPage(2)">Next</button>
+            </div>
+        </div>
         
-        <fieldset>
-            <legend>Next of Kin</legend>
-            First Name: <input type="text" name="kin_first_name"><br>
-            Middle Name: <input type="text" name="kin_middle_name"><br>
-            Last Name: <input type="text" name="kin_last_name"><br>
-            Relationship: <input type="text" name="kin_relationship"><br>
-            Phone Contact: <input type="tel" name="kin_phone_contact"><br>
-        </fieldset>
+        <div class="page" id="page2" style="display: none;">
+            <fieldset>
+                <!-- Next of Kin fields -->
+                <legend>Next of Kin</legend>
+                First Name: <input type="text" name="kin_first_name"><br>
+                Middle Name: <input type="text" name="kin_middle_name"><br>
+                Last Name: <input type="text" name="kin_last_name"><br>
+                Relationship: <input type="text" name="kin_relationship"><br>
+                Phone Contact: <input type="tel" name="kin_phone_contact"><br>
+            </fieldset>
+            <div class="pagination">
+                <button type="button" onclick="showPage(1)">Previous</button>
+                <button type="button" onclick="showPage(3)">Next</button>
+            </div>
+        </div>
         
-        <fieldset>
-            <legend>Employment History</legend>
-            Name of Employer: <input type="text" name="employer_name"><br>
-            Address: <input type="text" name="employer_address"><br>
-            Job Title: <input type="text" name="job_title"><br>
-            Year Started: <input type="text" name="job_year_started"><br>
-            Year End: <input type="text" name="job_year_end"><br>
-            Reason for Leaving: <input type="text" name="job_leave_reason"><br>
-        </fieldset>
+        <div class="page" id="page3" style="display: none;">
+            <fieldset>
+                <!-- Employment History fields -->
+                <legend>Employment History</legend>
+                Name of Employer: <input type="text" name="employer_name"><br>
+                Address: <input type="text" name="employer_address"><br>
+                Job Title: <input type="text" name="job_title"><br>
+                Year Started: <input type="text" name="job_year_started"><br>
+                Year End: <input type="text" name="job_year_end"><br>
+                Reason for Leaving: <input type="text" name="job_leave_reason"><br>
+            </fieldset>
+            <div class="pagination">
+                <button type="button" onclick="showPage(2)">Previous</button>
+                <button type="button" onclick="showPage(4)">Next</button>
+            </div>
+        </div>
         
-        <fieldset>
-            <legend>Education Background</legend>
-            Institution: <input type="text" name="institution"><br>
-            Year Started: <input type="text" name="education_year_started"><br>
-            Year End: <input type="text" name="education_year_end"><br>
-            Qualification: <input type="text" name="qualification"><br>
-        </fieldset>
+        <div class="page" id="page4" style="display: none;">
+            <fieldset>
+                <!-- Education Background fields -->
+                <legend>Education Background</legend>
+                Institution: <input type="text" name="institution"><br>
+                Year Started: <input type="text" name="education_year_started"><br>
+                Year End: <input type="text" name="education_year_end"><br>
+                Qualification: <input type="text" name="qualification"><br>
+            </fieldset>
+            <div class="pagination">
+                <button type="button" onclick="showPage(3)">Previous</button>
+                <input type="submit" value="Submit">
+            </div>
+        </div>
         
-        <input type="submit" value="Submit">
+        <script src="scripts.js"></script>
     </form>
 </body>
-</html>
+                                                                             </html>
