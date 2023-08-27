@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function validateField(fieldId, errorMessage) {
         const field = document.getElementById(fieldId);
         const value = field.value.trim();
-        const errorElement = field.nextElementSibling;
+        const errorElement = document.getElementById(fieldId + "-error"); // Corresponding error message element
 
         if (value === "") {
             showError(errorElement, errorMessage);
@@ -72,10 +72,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Get field IDs to validate for the current step
     function getFieldsToValidate(stepIndex) {
         const fields = [
-            ["first-name", "last-name", "dob", "address", "phone", "passport", "tin"], // Step 1
-            ["employer-name", "job-title", "employer-address", "employer-phone"],       // Step 2
-            ["institution-name", "start-year", "end-year", "qualification"],           // Step 3
-            ["bank-name", "account-holder", "account-number"]                         // Step 4
+            ["first-name", "middle-name", "last-name", "dob", "address", "phone", "passport", "tin"],
+            ["employer-name", "job-title", "employer-address", "employer-phone"],
+            ["institution-name", "start-year", "end-year", "qualification"],
+            ["bank-name", "account-holder", "account-number"]
         ];
 
         return fields[stepIndex];
